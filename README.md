@@ -27,7 +27,12 @@
 執行方式：
 ```bash
 scrapy crawl professors -o professors.csv
-💾 SQLite
+---
+## 💾 SQLite（加分項目）
+
 我也將抓下來的資料存進 SQLite 資料庫：
-professors.db
-📄 匯入 SQLite 的程式碼 → 點我看
+
+- 檔案名稱：`professors.db`
+- 表格內容包含教師姓名與研究專長
+
+📄 [SQLite 匯入程式碼 → 點我看](./sqlite_insert.py)
