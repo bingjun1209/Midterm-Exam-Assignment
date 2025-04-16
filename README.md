@@ -28,11 +28,4 @@
 ```bash
 scrapy crawl professors -o professors.csv
 ---
-## 🕷️ 接著使用 Scrapy
 
-使用 Scrapy 爬蟲框架自動抓取網頁中每位副教授的資料，並輸出為 csv 或 json。
-📄 [Scrapy 程式碼 → 點我看](./csie_professors/spiders/professors.py)
-執行方式：
-```bash
-scrapy crawl professors -o professors.csv
----
