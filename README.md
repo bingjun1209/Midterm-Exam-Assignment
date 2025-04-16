@@ -27,3 +27,7 @@
 執行方式：
 ```bash
 scrapy crawl professors -o professors.csv
+💾 SQLite
+我也將抓下來的資料存進 SQLite 資料庫：
+professors.db
+📄 匯入 SQLite 的程式碼 → 點我看
