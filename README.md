@@ -1,44 +1,56 @@
-# Midterm-Exam-Assignment
-這次期中考作業，我研究了 `Selenium` 與 `Scrapy`，並嘗試抓取亞洲大學資訊工程學系的網頁老師的姓名與研究領域（專長）。
-## ✅ 使用工具
-- Python
-- Selenium
-- Scrapy
-- CSV / JSON 檔案儲存
-- SQLite
-## 📌 抓取目標網站
----
-[https://csie.asia.edu.tw/zh_tw/associate_professors_2](https://csie.asia.edu.tw/zh_tw/associate_professors_2)
+# 📘 Midterm-Exam-Assignment
+
+這次期中考作業，我研究了 `Selenium` 與 `Scrapy`，並且試著抓取亞洲大學資工系的網頁老師的姓名與研究領域。
+
 ---
 
 ## 🐍 首先使用 Selenium
 
-使用 `Selenium` 自動打開網頁並擷取所有副教授的姓名與專長。資料可以儲存為下列兩個檔案(我是選擇csv)：
-- `professors_expertise.csv`
-- `professors_expertise.json`
+我使用 Selenium 自動開啟網頁、模擬瀏覽器操作，擷取副教授的姓名與研究專長，並儲存為 CSV 或 JSON 格式。
 
-📄 [Selenium 程式碼 → 點我看](./selenium_script.py)
+📄 [Selenium 程式碼 ➜ 點我看](./selenium_script.py)
 
 ---
+
 ## 🕷️ 接著使用 Scrapy
 
 使用 Scrapy 爬蟲框架自動抓取網頁中每位副教授的資料，並輸出為 csv 或 json。
 
-📄 [Scrapy 程式碼 → 點我看](./csie_professors/spiders/professors.py)
+📄 [Scrapy 程式碼 ➜ 點我看](./csie_professors/spiders/professors.py)
 
-### 🔧 執行爬蟲方式：
+**執行方式：**
 
-在專案根目錄下打開終端機，輸入以下指令：
+- 匯出為 JSON 格式：  
+  `scrapy crawl professors -o professors.json`
 
-#### ➤ 輸出成 JSON 格式
-```bash
-scrapy crawl professors -o professors.json
-## 💾 SQLite（加分項目）
+- 匯出為 CSV 格式：  
+  `scrapy crawl professors -o professors.csv`
 
-我也將抓下來的資料存進 SQLite 資料庫中，進一步練習資料庫儲存的應用：
+- 匯出為純文字格式：  
+  `scrapy crawl professors -o professors.txt`
+
+---
+
+### 💾 加分項目：資料儲存進 SQLite
+
+我也將用 Scrapy 抓下來的資料進一步儲存到 SQLite 資料庫中，作為延伸應用！
 
 - 檔案名稱：`professors.db`
 - 表格內容包含教師姓名與研究專長
+- 使用 `sqlite3` 模組寫入資料
 
 📄 [SQLite 匯入程式碼 ➜ 點我看](./sqlite_insert.py)
+
+**執行方式：**
+
+- 執行匯入指令：  
+  `python sqlite_insert.py`
+
+---
+
+## 📂 資料輸出格式一覽
+
+- `professors.json`：JSON 格式儲存結果
+- `professors.csv`：可直接開啟的 Excel 表格
+- `professors.db`：儲存在 SQLite 資料庫中
 
