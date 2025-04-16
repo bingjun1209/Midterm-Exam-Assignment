@@ -22,8 +22,6 @@
 ---
 ## 🕷️ 接著使用 Scrapy
 
-## 🕷️ 接著使用 Scrapy
-
 使用 Scrapy 爬蟲框架自動抓取網頁中每位副教授的資料，並輸出為 csv 或 json。
 
 📄 [Scrapy 程式碼 → 點我看](./csie_professors/spiders/professors.py)
@@ -35,5 +33,12 @@
 #### ➤ 輸出成 JSON 格式
 ```bash
 scrapy crawl professors -o professors.json
+## 💾 SQLite（加分項目）
 
+我也將抓下來的資料存進 SQLite 資料庫中，進一步練習資料庫儲存的應用：
+
+- 檔案名稱：`professors.db`
+- 表格內容包含教師姓名與研究專長
+
+📄 [SQLite 匯入程式碼 ➜ 點我看](./sqlite_insert.py)
 
